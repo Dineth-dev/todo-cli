@@ -103,7 +103,7 @@ else if(command == 'add'){
         markTaskAsDone(taskNumber);
     }
 }
-else if(command == 'incomplete'){
+else if(command == 'undone'){
     taskNumber = parseInt(args[0]);
     if(isNaN(taskNumber) || taskNumber < 1){
         console.log('Please enter a valid task number');
