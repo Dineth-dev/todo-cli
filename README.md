@@ -19,11 +19,11 @@ npm install
 
 ## Commands
 <bash>
-- Add - node todo.js add "Task"
-- List - node todo.js list
-- Done (Task number is used to select Task) - node todo.js done 1
-- Undone (Task number is used to select Task) - node todo.js undone 1
-- Sort - node todo.js sort
+- Add - node todo.js add "Task" <br>
+- List - node todo.js list <br>
+- Done (Task number is used to select Task) - node todo.js done 1 <br>
+- Undone (Task number is used to select Task) - node todo.js undone 1 <br>
+- Sort - node todo.js sort <br>
 
 ## Tech Stack
 
