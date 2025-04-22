@@ -54,13 +54,14 @@ function markTaskAsDone(taskNumber){
     }
 }
 
-// complete the sort function, push to github share github
 function sortTasksByCompletion(){
     const tasks = loadTasks();
-    return tasks.sort((a,b) =>{// sort compares a and b values, 1 pushes it after b and -1 pulls b up
+    const sortedTasks =  tasks.sort((a,b) =>{// sort compares a and b values, 1 pushes it after b and -1 pulls b up
         if (a.done == b.done) return 0; //don't change order if they are the same
         return a.done? 1:-1; //shift tasks that are completed to the bottom, if it is done 1 would push it down while -1 would put it after b
     })
+    console.log("Tasks sorted by completion");
+    return sortedTasks;
 }
 
 function markTaskAsIncomplete(taskNumber){
@@ -117,6 +118,13 @@ else if(command == 'undone'){
     }else{
         deleteTask(taskNumber);
     }
+}else if(command == 'sort'){
+    const sortedTasks = sortTasksByCompletion();
+    console.log("Sorted Tasks: ");
+    sortedTasks.forEach((task,index) => {
+        const status = task.done ? "[Done]" : "[Not Completed]";
+        console.log(`${index + 1}. ${task.text} ${status}`);
+    });
 }
 
 else{
