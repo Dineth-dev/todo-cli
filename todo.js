@@ -1,8 +1,7 @@
 const fs = require("fs");
 const command = process.argv[2];
-const args = process.argv.slice(3); // Removes first 3 inputs, so this can be used to just get the text of the task
+const args = process.argv.slice(3); // Removes first 3 inputs
 
-//list tasks, add tasks, 
 file_name = 'tasks.json';
 
 function loadTasks(){
@@ -20,7 +19,7 @@ function loadTasks(){
 }
 
 function saveTasks(tasks){
-    fs.writeFileSync(file_name, JSON.stringify(tasks, null, 2))//the null and the 2 is just to make it pretty, the null is the replacer and 2 is the indent spacer
+    fs.writeFileSync(file_name, JSON.stringify(tasks, null, 2))//Null is the replacer and 2 is the indent spacer for cleaner output
 }
 
 function listTasks(){
@@ -56,9 +55,9 @@ function markTaskAsDone(taskNumber){
 
 function sortTasksByCompletion(){
     const tasks = loadTasks();
-    const sortedTasks =  tasks.sort((a,b) =>{// sort compares a and b values, 1 pushes it after b and -1 pulls b up
-        if (a.done == b.done) return 0; //don't change order if they are the same
-        return a.done? 1:-1; //shift tasks that are completed to the bottom, if it is done 1 would push it down while -1 would put it after b
+    const sortedTasks =  tasks.sort((a,b) =>{// Sort compares a and b values, 1 pushes it after b and -1 pulls b up
+        if (a.done == b.done) return 0; // Doesn't change order if they are both the same
+        return a.done? 1:-1; // Shift tasks that are completed to the bottom, if it is done 1 would push it down while -1 would put it after b
     })
     console.log("Tasks sorted by completion");
     return sortedTasks;
@@ -90,7 +89,7 @@ if(command == 'list'){
     listTasks();
 }
 else if(command == 'add'){
-    taskText = args.join(" ");// Need a space here as it adds a space between each argument before joining it all into one
+    taskText = args.join(" ");// Adds a space between each argument before joining it all into one
     if(taskText){
         addTask(taskText);
     }else{
