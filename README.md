@@ -13,9 +13,11 @@ Manage tasks from terminal - add, list, mark task progression, delete and sort t
 - Tasks saved in a local JSON file
 
 ## Installation
-Clone repo and run:
+- git clone https://github.com/Dineth-dev/todo-cli.git
 
-npm install
+- npm install
+
+- node todo.js add "My first task"
 
 ## Commands
 <bash>
