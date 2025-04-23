@@ -32,3 +32,12 @@ Manage tasks from terminal - add, list, mark task progression, delete and sort t
 - Node.js
 - Javascript
 - File system (fs) module for data storage
+
+## Project Structure
+
+The CLI app has been modularized for better maintainability: <br>
+
+- todo.js - Main entry point <br>
+- storage.js - Handles saving/loading tasks from file <br>
+- tasks.js - Handles task manipulation <br>
+- tasks.json - Stores task data
