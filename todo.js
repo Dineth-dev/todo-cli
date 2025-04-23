@@ -3,6 +3,7 @@ const args = process.argv.slice(3); // Removes first 3 inputs
 file_name = 'tasks.json';
 const { listTasks, addTask, markTaskAsDone, markTaskAsIncomplete, deleteTask, sortTasksByCompletion } = require("./tasks.js");
 
+<<<<<<< HEAD
 // if(command == 'list'){
 //     listTasks();
 // }
@@ -52,6 +53,8 @@ else{
 //     console.log("Unknown command");
 // }
 
+=======
+>>>>>>> be72b88 (feat: add delete feature to todo.js)
 switch(command){
     case "add":
         const taskText = args.join(" ");
@@ -72,6 +75,9 @@ switch(command){
         break;  
     case "sort":
         sortTasksByCompletion();
+        break;
+    case "delete":
+        deleteTask(parseInt(args[0]));
         break;
     default:
         console.log("Unknown command");
